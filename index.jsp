@@ -76,6 +76,9 @@ ultricies nec, pellentesque eu, pretium quis, sem.</p>
 
 	    </div>  
     </div>
-    <div id="footer">Footer</div>
+    <div id="footer">
+    	
+    </div>
+    <tag:footer></tag:footer>
   </body>
 </html>

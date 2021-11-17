@@ -27,47 +27,21 @@ body{
 	padding-right: 1.5%;
 	text-align:center;
 }
-ul {
-	height: 100%;	
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-	background-color: #019cde;
-}
-
-li {
-  float: left;
-  border-right:1px solid #bbb;
-  font-weight: bold;
-  height:100%;
-}
-
-li:last-child {
-  border-right: none;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 30px;
-}
-
-li a:hover:not(.active) {
-  background-color: #5b9bd5;
-}
-
-.active {
-	text-decoration: underline;
-}
 
 #gsoLogo{
 	width:300px;	
 }
 
-#navLink{
-	
+.navbar{
+	background-color:#5b9bd5;
+	font-size:30px;
+}
+.navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show > .nav-link{
+	color:white;
+}
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover{
+	color:white;
+}
+.navbar-light .navbar-nav .nav-link{
+	color:white; 	
 }
