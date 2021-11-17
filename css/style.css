@@ -1,0 +1,73 @@
+html{
+	font-family: "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+}
+body{
+	margin-top: 0%;
+	margin-left: 12%;
+	margin-right: 12%;
+	box-shadow: 2px 2px 20px 2px grey;
+	min-height:100vh;
+}
+
+#navigationbar{
+	padding: 1% 0% 0% 0%;
+	display:grid;
+	grid-template-columns: 1fr 3fr;
+}
+
+#upper-gap{
+	height: 1%;
+}
+#login{
+	float:right;
+}
+
+#content-home{
+	padding-left: 2%;
+	padding-right: 1.5%;
+	text-align:center;
+}
+ul {
+	height: 100%;	
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #019cde;
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+  font-weight: bold;
+  height:100%;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+li a:hover:not(.active) {
+  background-color: #5b9bd5;
+}
+
+.active {
+	text-decoration: underline;
+}
+
+#gsoLogo{
+	width:300px;	
+}
+
+#navLink{
+	
+}
