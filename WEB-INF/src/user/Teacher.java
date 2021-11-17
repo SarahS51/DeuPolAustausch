@@ -1,15 +1,33 @@
 package user;
 
+import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Random;
 
 import connection.ConnectionManager;
+import constants.DatabaseInformation;
 
 public class Teacher {
 	
-	public boolean createRegisterKey() {
+	public boolean createRegisterKey() throws SQLException {
 		boolean success = true;
-		ConnectionManager connector= new ConnectionManager("jdbc:mysql://localhost:3306/deupol", "root", "root");
-		connector.closeConnection();
+		DatabaseInformation databaseInformation = new DatabaseInformation();
+		ConnectionManager connector= new ConnectionManager(databaseInformation.getDatebaseURL(), databaseInformation.getDatabaseUser(), databaseInformation.getDatabasePassword());
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");  
+	    LocalDateTime today = LocalDateTime.now();  
+	    String key = generateRegisterKey();
+	    key = key.replace("'", "y");
+	    
+	    String sql = "INSERT INTO keyslist(JoinKey, GenDate)"
+	    		+ " VALUES('" + key + "','" + dtf.format(today) + "');";
+	    
+	    if(!connector.executeInsertSQL(sql)) {
+	    	success = false;
+	    }
+		if(!connector.closeConnection()) {
+			success = false;
+		}
 		return success;
 	}
 	
