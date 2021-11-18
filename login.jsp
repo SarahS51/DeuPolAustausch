@@ -1,7 +1,20 @@
+<%@ page import=user.* %>
+<%@ page imort=connection.* %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="tag" tagdir="/WEB-INF/tags" %>
+<jsp:useBean id="userInfo" class="user.UserInformation" scope="session"/>
 <!DOCTYPE html>
+
+<%
+if(request.getParameter("login") != null) {
+	User user = new User();
+	if(request.getParameter("loginName") != null && request.getParameter("loginPassword") != null) {
+		user.seteMail(request.getParameter("loginName"));
+		user.setPassword(request.getParameter("loginPassword"));
+	}
+}
+%>
 <html>
 <head>
 	<meta charset="ISO-8859-1">
@@ -23,9 +36,9 @@
 	
 	    <!-- Login Form -->
 	    <form>
-	      <input type="text" id="login" class="fadeIn second" name="login" placeholder="Benutzername">
-	      <input type="password" id="password" class="fadeIn third" name="login" placeholder="Passwort">
-	      <input type="submit" class="fadeIn fourth" value="Anmelden">
+	      <input type="text" id="login" class="fadeIn second" name="loginName" placeholder="Benutzername">
+	      <input type="password" id="password" class="fadeIn third" name="loginPassword" placeholder="Passwort">
+	      <input type="submit" name="login" class="fadeIn fourth" value="Anmelden">
 	    </form>
 	
 	    <!-- Remind Passowrd -->
