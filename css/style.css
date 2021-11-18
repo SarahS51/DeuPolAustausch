@@ -1,0 +1,29 @@
+html{
+	font-family: "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+}
+body{
+	margin-top: 0%;
+	margin-left: 12%;
+	margin-right: 12%;
+	box-shadow: 2px 2px 20px 2px grey;
+	min-height:100vh;
+	padding-top: 10px;
+}
+
+.navbar-default{
+	color:white !important;	
+	background-color: #019cde;
+	font-weight: bold !important;
+}
+
+nav h1{
+	color:white !important;
+}
+
+nav .navbar-nav li a{
+	color:white !important;
+}
+
+nav form a{
+	color:white !important;
+}
