@@ -8,6 +8,7 @@ body{
 	box-shadow: 2px 2px 20px 2px grey;
 	min-height:100vh;
 	padding-top: 10px;
+	padding-bottom:1%;
 }
 
 .navbar-default{
@@ -26,4 +27,14 @@ nav .navbar-nav li a{
 
 nav form a{
 	color:white !important;
+}
+
+button{
+	background-color: #019cde !important;
+	border-color: white !important;
+}
+
+#backButton{
+	background-color: #898989 !important;
+	border-color: white !important;
 }
