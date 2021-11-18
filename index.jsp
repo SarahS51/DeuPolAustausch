@@ -79,6 +79,6 @@ ultricies nec, pellentesque eu, pretium quis, sem.</p>
     <div id="footer">
     	
     </div>
-    <tag:footer></tag:footer>
+    <tag:scripts/>
   </body>
 </html>

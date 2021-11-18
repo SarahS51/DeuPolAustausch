@@ -17,7 +17,7 @@
 	    <!-- Icon -->
 	    <div class="fadeIn first">
 	    	<a href="index.jsp">
-	      		<img src="assets/gso-logo.png" alt="GSO-Logo" />
+	      		<tag:logoGSO></tag:logoGSO>
 	      	</a>
 	    </div>
 	
@@ -30,11 +30,11 @@
 	
 	    <!-- Remind Passowrd -->
 	    <div id="formFooter">
-	      <a class="underlineHover" href="#">Registrieren</a>
+	      <a class="underlineHover" href="registrierung.jsp">Registrieren</a>
 	    </div>
 	
 	  </div>
 	</div>
-    <tag:footer></tag:footer>
+    <tag:scripts/>
 </body>
 </html>

@@ -11,6 +11,6 @@
 <body>
 	<tag:navigationbar/>
 
-    <tag:footer></tag:footer>
+    <tag:scripts/>
 </body>
 </html>
