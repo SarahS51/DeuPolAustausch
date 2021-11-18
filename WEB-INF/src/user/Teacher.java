@@ -17,7 +17,7 @@ public class Teacher {
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");  
 	    LocalDateTime today = LocalDateTime.now();  
 	    String key = generateRegisterKey();
-	    key = key.replace("'", "y");
+	    key = key.replaceAll("'", "y");
 	    
 	    String sql = "INSERT INTO keyslist(JoinKey, GenDate)"
 	    		+ " VALUES('" + key + "','" + dtf.format(today) + "');";

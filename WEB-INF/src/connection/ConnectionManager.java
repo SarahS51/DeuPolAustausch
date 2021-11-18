@@ -55,6 +55,10 @@ public class ConnectionManager {
     	return success;
     }
     
+    public Connection getConnection() {
+    	return this.con;
+    }
+    
     /**
      * Führt ein vorher definiertes "insert"-sql aus
      * @param sql
