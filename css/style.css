@@ -38,3 +38,11 @@ button{
 	background-color: #898989 !important;
 	border-color: white !important;
 }
+
+#titleSite{
+	margin-top:2.5%;
+	margin-bottom:2.5%;
+}
+#content{
+	padding: 2% 2% 2% 2%;
+}

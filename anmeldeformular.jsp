@@ -11,7 +11,7 @@
 <body>
 	<tag:navigationbar/>
 	
-	<h2 class="text-center" style="margin-top:2%">Anmeldeformular</h2>
+	<h2 class="text-center" id="titleSite">Anmeldeformular</h2>
 	<div style="padding-left:2%; padding-right:2%;">
 		<div style="padding-left:2%; padding-right:2%;">
 			<h4>Wichtig!</h4>
@@ -24,16 +24,29 @@
 			</p>
 			<p class="text-justify">
 				<div class="form-row">
-				  <div class="col-7">
-				  	test
+				  <div class="col-7 text-info">
+				  	Verpflichtende Restzahlung in Höhe von 180,00 EUR durch Banküberweisung
 				  </div>
 				  <div class="col">
-							<label for="labelStreetNr">Hausnummer:</label>
-				    <input type="text" class="form-control" placeholder="2">
-				  </div>
-				  <div class="col">
-							<label for="labelStreetAdd">Zusatz:</label>
-				    <input type="text" class="form-control" placeholder="B">
+				  <table>
+				  	<tr>
+				  		<td class="text-secondary">Empfänger:</td>
+				  		<td>Förderverein des BK Georg-Simon-Ohm</td>
+				  	</tr>
+					<tr>
+				  		<td class="text-secondary">IBAN:</td>
+				  		<td>DE76 3705 0198 0014 6320 79</td>
+				  	</tr>
+ 					<tr>
+				  		<td class="text-secondary">Verwendungszweck:</td>
+				  		<td>Warschau20XX/ Nachname/ Vorname</td>
+				  	</tr>
+				  	<tr>
+				  		<td colspan="2" class="text-danger">
+				  			<small>(Verwendungszeck in folgendem Format angeben: "Warschau2021/ Mustermann/ Max")</small>
+				  		</td>
+				  	</tr>
+				  </table>				  
 				  </div>
 				</div>
 			</p>

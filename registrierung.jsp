@@ -10,7 +10,7 @@
 </head>
 <body>
 <tag:logoGSO></tag:logoGSO>
-	<h1 class="text-center">Registrierung</h1>
+	<h1 class="text-center" id="titleSite">Registrierung</h1>
 	<div style="padding-left:2%; padding-right:2%;">
 		<form style="padding-top:5%;" action="anmeldeformular.jsp">
 		  <div class="form-row">
