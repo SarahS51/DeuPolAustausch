@@ -11,7 +11,7 @@ import connection.ConnectionManager;
 import constants.DatabaseInformation;
 import constants.PupilStatusConstants;
 
-public class Teacher {
+public class Teacher extends User {
 	
 	/**
 	 * Erstellt einen Registierungsschlüssen und speichert diesen in der Datenbank
@@ -89,14 +89,7 @@ public class Teacher {
 				}
 			}
 			
-			success = sendEmailToPupil(connector, pupilId);
-			
 		}
-		return success;
-	}
-	
-	private boolean sendEmailToPupil(ConnectionManager connector, int pupilID) {
-		boolean success = true;
 		return success;
 	}
 	

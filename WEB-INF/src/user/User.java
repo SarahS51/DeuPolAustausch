@@ -13,6 +13,7 @@ public class User {
 	private String password = "";
 	private int userId = 0;
 	private int role = 0;
+	private boolean login = false;
 	
 	public String geteMail() {
 		return eMail;
@@ -36,6 +37,14 @@ public class User {
 	
 	public int getUserId() {
 		return userId;
+	}
+
+	public boolean isLogin() {
+		return login;
+	}
+
+	public void setLogin(boolean login) {
+		this.login = login;
 	}
 
 	/**
@@ -62,6 +71,7 @@ public class User {
 				if(rs.next()) {
 					userId = rs.getInt("PupilID");
 					role = RoleConstants.PUPIL;
+					login = true;
 				} else {
 					success = false;
 				}
@@ -78,6 +88,7 @@ public class User {
 					if(rs.next()) {
 						userId = rs.getInt("TeacherID");
 						role = rs.getInt("RoleID");
+						login = true;
 					} else {
 						success = false;
 					}
