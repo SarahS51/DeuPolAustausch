@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<title>Inputboxes</title>
+</head>
+<body>
+<form action="connect.php" method="post">
+ <label for="firstname">Vorname:
+    <input id="firstname" name="firstname">
+  </label><br>
+  <label for="lastname">Nachname:
+    <input id="lastname" name="lastname">
+  </label><br>
+  <label for="street">Straße:
+    <input id="street" name="street">
+  </label><br>
+  <label for="housenumber">Hausnummer:
+    <input id="housenumber" name="housenumber">
+  </label><br>
+  <label for="postalcode">Postleitzahl:
+    <input id="postalcode" name="postalcode">
+  </label><br>
+  <label for="city">Stadt:
+    <input id="city" name="city">
+  </label><br>
+  <label for="telephone">Telefon:
+    <input id="telephone" name="telephone">
+  </label><br>
+  <label for="schoolclass">Klasse(Kürzel):
+    <input id="schoolclass" name="schoolclass">
+  </label><br>
+  <label for="specialdiet">Besondere Ernährung?(Allergien, Vegetarier, etc.):
+    <input id="specialdiet" name="specialdiet">
+  </label><br>
+  <label for="physicalimpairment">Körperliche Beeinträchtigungen?:
+    <input id="physicalimpairment" name="physicalimpairment">
+  </label><br>
+  <label for="EmCo">Notfallkontakt:
+  </label><br>
+  <label for="EmCo_name">Nachname:
+    <input id="EmCo_name" name="EmCo_name">
+  </label><br>
+  <label for="EmCo_firstname">Vorname:
+    <input id="EmCo_firstname" name="EmCo_firstname">
+  </label><br>
+  <label for="EmCo_telephone">Telefon:
+    <input id="EmCo_telephone" name="EmCo_telephone">
+  </label><br>
+  <label for="birthdate"> Geburtstag:
+  <input type="date" id="birthdate" name="birthdate">
+  </label><br>
+  <label for="man">männlich</label>
+    <input type="radio" id="man" name="gender" value="0"><br>
+  <label for="women">weiblich</label>
+    <input type="radio" id="woman" name="gender" value="1"><br>
+  <label for="divers">divers</label>
+    <input type="radio" id="divers" name="gender" value="2"><br>
+
+	<select name="gender" size="3" >
+	    <option value="man"> männlich </option>
+	    <option value="woman"> weiblich </option>
+	    <option value="divers"> divers </option>
+	</select><br>
+
+  <input type="submit" value="senden">
+  </form>
+</html>
