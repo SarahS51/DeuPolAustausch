@@ -1,13 +1,49 @@
+<%@ page import="user.*" %>
+<%@ page import="connection.*" %>
+<%@ page import="constants.*" %>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="tag" tagdir="/WEB-INF/tags" %>
+<jsp:useBean id="userInfo" class="user.UserInformation" scope="session"/>
 <!DOCTYPE html>
+
+<%
+User user = userInfo.getUser();
+if(request.getParameter("login") != null) {
+	if(request.getParameter("loginName") != null && request.getParameter("loginPassword") != null) {
+		user.seteMail(request.getParameter("loginName"));
+		user.setPassword(request.getParameter("loginPassword"));
+		user.login();
+	}
+} else if(request.getParameter("register") != null) {
+	Pupil pupil = (Pupil) user;
+}
+%>
+
 <html>
 <head>
 <meta charset="ISO-8859-1">
 	<title>Persönliches</title>
 	<tag:header/>
 </head>
+<%
+if(!user.isLogin()) {
+%>
+<body>
+	<tag:navigationbar/>
+	
+	<h2 class="text-center" id="titleSite">Anmeldung</h2>
+	<div style="padding-left:2%; padding-right:2%;">
+		<div style="padding-left:2%; padding-right:2%;">
+			<h4 class="text-center">Anmeldung Fehlgeschlagen!</h4>
+		</div>
+	</div>
+</body>
+<%
+}
+if(user.isLogin() && user.getRole() == RoleConstants.PUPIL) {
+%>
 <body>
 	<tag:navigationbar/>
 	
@@ -182,4 +218,7 @@
 	</div>
     <tag:scripts/>
 </body>
+<%
+}
+%>
 </html>

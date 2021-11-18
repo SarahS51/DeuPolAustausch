@@ -79,7 +79,7 @@ public class User {
 		}
 		if(!success) {
 			success = true;
-			sql = "SELECT TeacherID, RoleID FROM pupil"
+			sql = "SELECT TeacherID, RoleID FROM teacher"
 				+ " WHERE Email = ? AND Password = ?";	
 			try(PreparedStatement pStmt = connector.getConnection().prepareStatement(sql)) {
 				pStmt.setString(1, eMail);

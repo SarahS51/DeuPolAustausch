@@ -5,6 +5,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import connection.ConnectionManager;
@@ -12,6 +14,16 @@ import constants.DatabaseInformation;
 import constants.PupilStatusConstants;
 
 public class Teacher extends User {
+	
+	private List<Pupil> pupilList = new ArrayList<Pupil>();
+	
+	public void addPupil(Pupil pupil) {
+		pupilList.add(pupil);
+	}
+	
+	public List<Pupil> getPupilList() {
+		return pupilList;
+	}
 	
 	/**
 	 * Erstellt einen Registierungsschlüssen und speichert diesen in der Datenbank
