@@ -2,10 +2,10 @@
 <%@ taglib prefix="tag" tagdir="/WEB-INF/tags" %>
 <html>
   <head>
+  	<title>Startseite</title>
     <tag:header/>
   </head>
   <body>
-    <div id="upper-gap"></div>
     <div id="navigationbar">
     	<tag:navigationbar/>
     </div>
