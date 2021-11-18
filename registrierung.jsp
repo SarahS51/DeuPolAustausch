@@ -10,53 +10,38 @@
 </head>
 <body>
 <tag:logoGSO></tag:logoGSO>
-	<h1 class="text-center">Registrierung</h1>
+	<h1 class="text-center" id="titleSite">Registrierung</h1>
 	<div style="padding-left:2%; padding-right:2%;">
-		<form>
+		<form style="padding-top:5%;" action="anmeldeformular.jsp">
 		  <div class="form-row">
 		    <div class="form-group col-md-6">
-		      <label for="inputEmail4">Email</label>
-		      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+			  <div class="form-group">
+			    <label for="labelUsername">Benutzername:</label>
+			    <input type="text" class="form-control" id="inputfieldUsername" placeholder="Benutzername">
+			  </div>
+  			  <div class="form-group">
+			    <label for="labelEMail">E-Mail-Adresse</label>
+			    <input type="email" class="form-control" id="inputfieldEMail" placeholder="name@gso.schule.koeln">
+			  </div>
+  			  <div class="form-group">
+			    <label for="labelRegKey">Registrierungsschlüssel</label>
+			    <input type="text" class="form-control" id="inputRegKey" placeholder="XXXXXXXXXXXXXXXX">
+			  </div>
 		    </div>
 		    <div class="form-group col-md-6">
-		      <label for="inputPassword4">Password</label>
-		      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-		    </div>
+			  <div class="form-group">
+			  	<h2 class="text-center">Informationen</h2>
+			    <p>
+			    	Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
+			    	At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+			    	At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 	
+			    	Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+			    </p>
+			  </div>
+		    </div>		   
 		  </div>
-		  <div class="form-group">
-		    <label for="inputAddress">Address</label>
-		    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-		  </div>
-		  <div class="form-group">
-		    <label for="inputAddress2">Address 2</label>
-		    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-		  </div>
-		  <div class="form-row">
-		    <div class="form-group col-md-6">
-		      <label for="inputCity">City</label>
-		      <input type="text" class="form-control" id="inputCity">
-		    </div>
-		    <div class="form-group col-md-4">
-		      <label for="inputState">State</label>
-		      <select id="inputState" class="form-control">
-		        <option selected>Choose...</option>
-		        <option>...</option>
-		      </select>
-		    </div>
-		    <div class="form-group col-md-2">
-		      <label for="inputZip">Zip</label>
-		      <input type="text" class="form-control" id="inputZip">
-		    </div>
-		  </div>
-		  <div class="form-group">
-		    <div class="form-check">
-		      <input class="form-check-input" type="checkbox" id="gridCheck">
-		      <label class="form-check-label" for="gridCheck">
-		        Check me out
-		      </label>
-		    </div>
-		  </div>
-		  <button type="submit" class="btn btn-primary">Sign in</button>
+		  <button type="submit" class="btn btn-primary">Registrieren!</button>
+		  <a class="btn btn-primary" href="index.jsp" role="button" id="backButton">Zurück</a>
 		</form>	
 	</div>
 	<tag:scripts></tag:scripts>
