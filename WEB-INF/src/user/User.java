@@ -3,111 +3,89 @@ package user;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 import connection.ConnectionManager;
 import constants.DatabaseInformation;
+import constants.RoleConstants;
 
 public class User {
-	private String registerKey = "";
 	private String eMail = "";
 	private String password = "";
+	private int userId = 0;
+	private int role = 0;
 	
-	public String getRegisterKey() {
-		return registerKey;
-	}
-
-
-	public void setRegisterKey(String registerKey) {
-		this.registerKey = registerKey;
-	}
-
-
 	public String geteMail() {
 		return eMail;
 	}
-
 
 	public void seteMail(String eMail) {
 		this.eMail = eMail;
 	}
 
-
 	public String getPassword() {
 		return password;
 	}
 
-
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	public int getRole() {
+		return this.role;
+	}
+	
+	public int getUserId() {
+		return userId;
+	}
 
-
-	public boolean createUser() throws SQLException {
+	/**
+	 * Versucht einen Benutzer mit der Kombination aus eingegeber E-Mail und Passwort in der Datenbank zu finden
+	 * 
+	 * @return true wenn ein Nutzer gefunden wurde, sonst false
+	 * @throws SQLException
+	 */
+	public boolean login() throws SQLException {
 		boolean success = true;
-		DatabaseInformation databaseInformation = new DatabaseInformation();
-		ConnectionManager connector = new ConnectionManager(databaseInformation.getDatebaseURL(), databaseInformation.getDatabaseUser(), databaseInformation.getDatabasePassword());
+		PasswordHasher passwordHasher = new PasswordHasher();
+		password = passwordHasher.hashPassword(password);
+		DatabaseInformation dbInformation = new DatabaseInformation();
 		
-		String keyDate = "";
-		int keyId = -1;
+		ConnectionManager connector = new ConnectionManager(dbInformation.getDatebaseURL(), dbInformation.getDatabaseUser(), dbInformation.getDatabasePassword());
 		
-		String sql = "SELECT KeyID, GenDate FROM keyslist"
-				+ " WHERE JoinKey = ?";
+		String sql = "SELECT PupilID FROM pupil"
+				+ " WHERE Email = ? AND Password = ?";
+		
 		try(PreparedStatement pStmt = connector.getConnection().prepareStatement(sql)) {
-			pStmt.setString(1, this.registerKey);
+			pStmt.setString(1, eMail);
+			pStmt.setString(2, password);
 			try(ResultSet rs = pStmt.executeQuery()) {
 				if(rs.next()) {
-					keyDate = rs.getString("GenDate");
-					keyId = rs.getInt("keyID");
+					userId = rs.getInt("PupilID");
+					role = RoleConstants.PUPIL;
 				} else {
 					success = false;
 				}
 			}
 		}
-		if(success) {
-			DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");  
-		    LocalDateTime now = LocalDateTime.now();
-		    String today = dtf.format(now);
-		    today = today.replaceAll("-", "");
-		    keyDate = keyDate.replaceAll("-", "");
-		    if(30 >= Integer.parseInt(today)-Integer.parseInt(keyDate)) {
-		    	sql = "SELECT 1 FROM pupil"
-		    			+ " WHERE EMail = ?";
-		    	try(PreparedStatement pStmt = connector.getConnection().prepareStatement(sql)) {
-		    		pStmt.setString(1, eMail);
-		    		try(ResultSet rs = pStmt.executeQuery()) {
-		    			if(rs.next()) {
-		    				success = false;
-		    			}
-		    		}
-		    	}
-		    	if(success) {
-		    		PasswordHasher passwordHasher = new PasswordHasher();
-		    		password = passwordHasher.hashPassword(password);
-		    		sql = "INSERT INTO pupil(EMail, Password, RoleID)"
-		    				+ "VALUES('" + eMail + "', '" + password + "', 3);";
-		    		success = connector.executeInsertSQL(sql);
-		    	}
-		    	if(success) {
-		    		sql = "DELETE FROM keyslist"
-		    				+ " WHERE keyID = ?";
-		    		try(PreparedStatement pStmt = connector.getConnection().prepareStatement(sql)) {
-		    			pStmt.setInt(1, keyId);
-		    			success = pStmt.execute();
-		    		}
-		    	}
-		    } else {
-		    	success = false;
-		    	sql = "DELETE FROM keyslist"
-	    				+ " WHERE keyID = ?";
-	    		try(PreparedStatement pStmt = connector.getConnection().prepareStatement(sql)) {
-	    			pStmt.setInt(1, keyId);
-	    			success = pStmt.execute();
-	    		}
-		    }
+		if(!success) {
+			success = true;
+			sql = "SELECT TeacherID, RoleID FROM pupil"
+				+ " WHERE Email = ? AND Password = ?";	
+			try(PreparedStatement pStmt = connector.getConnection().prepareStatement(sql)) {
+				pStmt.setString(1, eMail);
+				pStmt.setString(2, eMail);
+				try(ResultSet rs = pStmt.executeQuery()) {
+					if(rs.next()) {
+						userId = rs.getInt("TeacherID");
+						role = rs.getInt("RoleID");
+					} else {
+						success = false;
+					}
+				}
+			}
 		}
+		connector.closeConnection();
 		return success;
 	}
-	
+
 }

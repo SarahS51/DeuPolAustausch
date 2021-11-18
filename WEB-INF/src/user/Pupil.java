@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 import constants.FieldConstants;
 
-public class Pupil extends User {
+public class Pupil extends PupilCreator {
 	private String firstName = "";
 	private String lastName = "";
 	private String street = "";
