@@ -14,16 +14,6 @@
 <body>
 	<tag:navigationbar/>
 	
-	<h2 class="text-center" id="titleSite">Anmeldung</h2>
-	<div style="padding-left:2%; padding-right:2%;">
-		<div style="padding-left:2%; padding-right:2%;">
-			<h4 class="text-center">Anmeldung Fehlgeschlagen!</h4>
-		</div>
-	</div>
-</body>
-<body>
-	<tag:navigationbar/>
-	
 	<h2 class="text-center" id="titleSite">Anmeldeformular</h2>
 	<div style="padding-left:2%; padding-right:2%;">
 		<div style="padding-left:2%; padding-right:2%;">
@@ -67,7 +57,7 @@
 		<hr>
 		<div>
 			<form>
-				<div class="form-group">
+				<div class="form-group" action="anmeldeformular.jsp">
 					<h5>Personaldaten</h5>
 					<div class="form-group">
 					  <label for="labelLastname">Nachname:</label>
