@@ -1,16 +1,35 @@
+<%@page import="user.PupilCreator"%>
+<%@page import="constants.PupilStatusConstants"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="tag" tagdir="/WEB-INF/tags" %>
 
 <!DOCTYPE html>
-
+<jsp:useBean id="userInfo" class="user.UserInformation" scope="session">
 <html>
 <head>
 <meta charset="ISO-8859-1">
 	<title>Persönliches</title>
 	<tag:header/>
 </head>
+<%
+User user = userInfo.getUser();
 
+if(request.getParameter("registerButton") != null) {
+	if(request.getParameter("inputfieldUsername") != null && request.getParameter("inputfieldEMail") != null
+			&& request.getParameter("inputRegKey") != null) {
+		PupilCreator pupilC = new PupilCreator();
+		pupilC.setRegisterKey(request.getParameter("inputRegKey"));
+		pupilC.seteMail("inputfieldEMail");
+		pupilC.setPassword("inputfieldUsername");
+		if(pupilC.createUser()) {
+			
+		}
+	}
+}
+
+
+%>
 <body>
 	<tag:navigationbar/>
 	
@@ -185,4 +204,5 @@
 	</div>
     <tag:scripts/>
 </body>
+</jsp:useBean>
 </html>

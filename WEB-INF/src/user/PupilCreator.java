@@ -9,7 +9,7 @@ import java.time.format.DateTimeFormatter;
 import connection.ConnectionManager;
 import constants.DatabaseInformation;
 
-public class PupilCreator {
+public class PupilCreator extends User {
 	private String registerKey = "";
 	private String eMail = "";
 	private String password = "";
@@ -113,6 +113,18 @@ public class PupilCreator {
 	    		}
 	    		createUser();
 		    }
+		}
+		sql = "SELECT PupilID FROM pupil"
+				+ " WHERE EMail = ?"
+				+ " AND Password = ?";
+		try(PreparedStatement pStmt = connector.getConnection().prepareStatement(sql)) {
+			pStmt.setString(1, eMail);
+			pStmt.setString(2, password);
+			try(ResultSet rs = pStmt.executeQuery()) {
+				if(rs.next()) {
+					setUserId(rs.getInt("PupilID"));
+				}
+			}
 		}
 		
 		connector.closeConnection();

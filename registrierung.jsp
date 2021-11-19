@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="tag" tagdir="/WEB-INF/tags" %>
 <!DOCTYPE html>
+<jsp:useBean id="userInfo" class="user.UserInformation" scope="session">
 <html>
 <head>
 <meta charset="ISO-8859-1">
@@ -17,15 +18,15 @@
 		    <div class="form-group col-md-6">
 			  <div class="form-group">
 			    <label for="labelUsername">Benutzername:</label>
-			    <input type="text" class="form-control" id="inputfieldUsername" placeholder="Benutzername">
+			    <input type="text" class="form-control" id="inputfieldUsername" name="inputfieldUsername" placeholder="Benutzername">
 			  </div>
   			  <div class="form-group">
 			    <label for="labelEMail">E-Mail-Adresse</label>
-			    <input type="email" class="form-control" id="inputfieldEMail" placeholder="name@gso.schule.koeln">
+			    <input type="email" class="form-control" id="inputfieldEMail" name="inputfieldEMail" placeholder="name@gso.schule.koeln">
 			  </div>
   			  <div class="form-group">
 			    <label for="labelRegKey">Registrierungsschlüssel</label>
-			    <input type="text" class="form-control" id="inputRegKey" placeholder="XXXXXXXXXXXXXXXX">
+			    <input type="text" class="form-control" id="inputRegKey" name="inputRegKey" placeholder="XXXXXXXXXXXXXXXX">
 			  </div>
 		    </div>
 		    <div class="form-group col-md-6">
@@ -41,9 +42,10 @@
 		    </div>		   
 		  </div>
 		  <button type="submit" class="btn btn-primary">Registrieren!</button>
-		  <a class="btn btn-primary" href="index.jsp" role="button" id="backButton">Zurück</a>
+		  <a class="btn btn-primary" href="index.jsp" name="registerButton" role="button" id="backButton">Zurück</a>
 		</form>	
 	</div>
 	<tag:scripts></tag:scripts>
 	</body>
+	</jsp:useBean>
 </html>

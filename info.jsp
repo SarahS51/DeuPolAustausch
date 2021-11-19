@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="tag" tagdir="/WEB-INF/tags" %>
 <!DOCTYPE html>
+<jsp:useBean id="userInfo" class="user.UserInformation" scope="session">
 <html>
 <head>
 	<meta charset="ISO-8859-1">
@@ -94,4 +95,5 @@
     	</div>
     </div>
 </body>
+</jsp:useBean>
 </html>
