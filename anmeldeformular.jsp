@@ -5,21 +5,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="tag" tagdir="/WEB-INF/tags" %>
-<jsp:useBean id="userInfo" class="user.UserInformation" scope="session"/>
-<!DOCTYPE html>
 
-<%
-User user = userInfo.getUser();
-if(request.getParameter("login") != null) {
-	if(request.getParameter("loginName") != null && request.getParameter("loginPassword") != null) {
-		user.seteMail(request.getParameter("loginName"));
-		user.setPassword(request.getParameter("loginPassword"));
-		user.login();
-	}
-} else if(request.getParameter("register") != null) {
-	Pupil pupil = (Pupil) user;
-}
-%>
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -40,10 +27,6 @@ if(!user.isLogin()) {
 		</div>
 	</div>
 </body>
-<%
-}
-if(user.isLogin() && user.getRole() == RoleConstants.PUPIL) {
-%>
 <body>
 	<tag:navigationbar/>
 	
@@ -218,7 +201,4 @@ if(user.isLogin() && user.getRole() == RoleConstants.PUPIL) {
 	</div>
     <tag:scripts/>
 </body>
-<%
-}
-%>
 </html>
