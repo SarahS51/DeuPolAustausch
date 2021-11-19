@@ -56,8 +56,8 @@
 		</div>
 		<hr>
 		<div>
-			<form>
-				<div class="form-group" action="anmeldeformular.jsp">
+			<form action="anmeldeformular.jsp">
+				<div class="form-group" >
 					<h5>Personaldaten</h5>
 					<div class="form-group">
 					  <label for="labelLastname">Nachname:</label>
