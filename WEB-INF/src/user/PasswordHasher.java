@@ -5,6 +5,12 @@ import java.security.NoSuchAlgorithmException;
 
 public class PasswordHasher {
 	
+	/**
+	 * Hashed einen String Mittels MD5
+	 * 
+	 * @param passwordToHash
+	 * @return der gehashte String
+	 */
 	public String hashPassword(String passwordToHash) {
         String generatedPassword = null;
         try 

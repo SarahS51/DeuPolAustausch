@@ -28,6 +28,11 @@ public class ConnectionManager {
     	createConnection();
     }
 	
+    /**
+     * Stellt eine Verbindung zur Datenbank her
+     * 
+     * @return die Connection
+     */
     private Connection createConnection() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -95,37 +100,5 @@ public class ConnectionManager {
     		}
     	}
     	return selectionMap;
-    }
-    
-    /**
-     * Wird momentan nicht verwendet!
-     * Versucht eine Verbidung zur Datenbank herzustellen
-     * @return success
-     */
-	private boolean checkConnection() {
-        Connection con = null;
-        boolean success = true;
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection(dbURL, user, password);
-        } catch (SQLException | ClassNotFoundException ex) {
-            success = false;
-            ex.printStackTrace();
-    } finally {
-            try {
-                if (con != null && !con.isClosed()) {
-                    con.close();
-                }
-            } catch (SQLException ex) {
-                success = false;
-                ex.printStackTrace();
-            }
-        }
-        if(success) {
-        	System.out.println("Erfolg");
-        } else {
-        	System.out.println("Kein Erfolg");
-        }
-        return success;
     }
 }

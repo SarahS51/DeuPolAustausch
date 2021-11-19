@@ -1,5 +1,10 @@
 package constants;
 
+/**
+ * Konstaten, die verwenden werden, um anzugeben was für eine Art Inhalt ein bestimmtes Feld haben soll
+ * (Dient um die Eingaben überprüfen zu können)
+ * @author sschallehn
+ */
 public class FieldConstants {
 
 	public static final int REST = 0;
