@@ -22,7 +22,7 @@
 	    </div>
 	
 	    <!-- Login Form -->
-	    <form>
+	    <form action="anmeldeformular.jsp">
 	      <input type="text" id="login" class="fadeIn second" name="login" placeholder="Benutzername">
 	      <input type="password" id="password" class="fadeIn third" name="login" placeholder="Passwort">
 	      <input type="submit" class="fadeIn fourth" value="Anmelden">
