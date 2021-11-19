@@ -1,7 +1,3 @@
-<%@ page import="user.*" %>
-<%@ page import="connection.*" %>
-<%@ page import="constants.*" %>
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="tag" tagdir="/WEB-INF/tags" %>
@@ -14,9 +10,7 @@
 	<title>Persönliches</title>
 	<tag:header/>
 </head>
-<%
-if(!user.isLogin()) {
-%>
+
 <body>
 	<tag:navigationbar/>
 	
