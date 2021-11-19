@@ -18,7 +18,7 @@
         <a class="nav-link" href="impressum.jsp">Impressum</a>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <a class="nav-link" href="login.jsp">Anmelden</a>
+      <a class="nav-link" name="loginButton" href="login.jsp">An-/Abmelden</a>
     </form>
   </div>
 </nav>

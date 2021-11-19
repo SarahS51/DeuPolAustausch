@@ -38,3 +38,31 @@ button{
 	background-color: #898989 !important;
 	border-color: white !important;
 }
+
+#titleSite{
+	margin-top:2.5%;
+	margin-bottom:2.5%;
+}
+#content{
+	padding: 2% 2% 2% 2%;
+}
+
+#anwesend{
+	color: white;
+	background-color: #28a745 !important;
+}
+
+#fehlt{
+	color: white;
+	background-color: #dc3545 !important;
+}
+
+#entschuldigt{
+	color: white;
+	background-color: #ffc107 !important;
+}
+
+#modalCloseButton{
+	background-color: white !important;
+	border-top-right-radius: 0.3rem;
+}
