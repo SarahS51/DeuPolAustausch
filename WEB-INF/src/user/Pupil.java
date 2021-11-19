@@ -1,6 +1,7 @@
 package user;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -189,6 +190,25 @@ public class Pupil extends User {
 				birthdate += birthdateList[i];
 			}
 		}
+	}
+
+	public boolean selectPupil() throws SQLException {
+		boolean success = true;
+		DatabaseInformation databaseInformation = new DatabaseInformation();
+		ConnectionManager connector= new ConnectionManager(databaseInformation.getDatebaseURL(), databaseInformation.getDatabaseUser(), databaseInformation.getDatabasePassword());
+		
+		String sql = "SELECT Name, Firstname, Gender, Birthdate, Street, Housenumber,"
+				+ "	Postalcode, City, Telephone, Class, Classteacher, Specialdiet,"
+				+ "	Physicalimpairment, EmCo_Name, EmCo_Firstname, EmCo_Telephone, StatusID"
+				+ " WHERE PupilID = ?";
+		try(PreparedStatement pStmt = connector.getConnection().prepareStatement(sql)) {
+			pStmt.setInt(1, this.getUserId());
+			try(ResultSet rs = pStmt.executeQuery()) {
+				
+			}
+		}
+		connector.closeConnection();
+		return success;
 	}
 	
 	public boolean updatePupil() throws SQLException {

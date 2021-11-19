@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="tag" tagdir="/WEB-INF/tags" %>
+<jsp:useBean id="userInfo" class="user.UserInformation" scope="session"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,7 +41,7 @@
 			  </div>
 		    </div>		   
 		  </div>
-		  <button type="submit" class="btn btn-primary">Registrieren!</button>
+		  <button type="submit" name="register" class="btn btn-primary">Registrieren!</button>
 		  <a class="btn btn-primary" href="index.jsp" role="button" id="backButton">Zurück</a>
 		</form>	
 	</div>
