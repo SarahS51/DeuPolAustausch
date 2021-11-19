@@ -1,5 +1,10 @@
 package constants;
 
+/**
+ * Konstanten, die verwendet werden, um den Anmelde-Status eines Schülers zu überprüfen
+ * @author sschallehn
+ *
+ */
 public class PupilStatusConstants {
 	public static final int REGISTERED = 1;
 	public static final int FIRST_PAYMENT = 2;

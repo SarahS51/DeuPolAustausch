@@ -118,6 +118,13 @@ public class Pupil extends User {
 		this.emergencyContact = emergencyContact;
 	}
 	
+	/**
+	 * Überprüft die Eingaben
+	 * 
+	 * @param fieldType
+	 * @param input
+	 * @return true, wenn die Eingabe in Ordnung war; sonst false
+	 */
 	public boolean checkInput(int fieldType, String input) {
 		boolean ok = true;
 		if(FieldConstants.POSTCODE == fieldType) {
@@ -160,7 +167,6 @@ public class Pupil extends User {
 			boolean specialCharacter = matcher.find();
 			if(specialCharacter)  {
 				int dotCounter = 0;
-				boolean dotFound = true;
 				for(int i = 0; i < input.length(); i++) {
 					if( '.' == input.charAt(i)) {
 						dotCounter++;
@@ -179,6 +185,9 @@ public class Pupil extends User {
 		return ok;
 	}
 	
+	/**
+	 * Formatiert das eingegebene Geburtdatum so, dass es vom Typ "Date" in die Datenbank geschrieben werden kann
+	 */
 	private void formatBirthdate() {
 		String[] birthdateList = birthdate.split(".");
 		birthdate = "";;
@@ -191,6 +200,13 @@ public class Pupil extends User {
 		}
 	}
 	
+	/**
+	 * Updated einen Schüler in der Datenbank
+	 * -> fügt die Informationen hinzu, die er im Anmeldeforumlar eingegeben hat
+	 * 
+	 * @return
+	 * @throws SQLException
+	 */
 	public boolean updatePupil() throws SQLException {
 		boolean success = true;
 		DatabaseInformation databaseInformation = new DatabaseInformation();

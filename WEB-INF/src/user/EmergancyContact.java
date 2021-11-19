@@ -1,5 +1,11 @@
 package user;
 
+/**
+ * Klasse zum Speichern der Emergancy-Kontakte eines Schülers
+ * @author sschallehn
+ *
+ */
+
 public class EmergancyContact {
 	private String name = "";
 	private String firstName = "";

@@ -1,5 +1,11 @@
 package constants;
 
+/**
+ * Klasse, die die Informationen zum Herstellen einer Datenbankverbindung enhthält
+ * 
+ * @author sschallehn
+ *
+ */
 public class DatabaseInformation {
 	private String datebaseURL = "jdbc:mysql://localhost:3306/deupol";
 	private String databaseUser = "root";
